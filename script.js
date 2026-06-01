@@ -1,21 +1,30 @@
 document.getElementById('contactForm').addEventListener('submit', function(e) {
-  if (this.getAttribute('action')) {
-    return;
-  }
-
   e.preventDefault();
 
-  var formData = new FormData(this);
-  var name = formData.get('name');
-  var email = formData.get('email');
-  var message = formData.get('message');
-  var subject = encodeURIComponent('Tour request from ' + name);
-  var body = encodeURIComponent(
-    'Name: ' + name + '\n' +
-    'Email: ' + email + '\n\n' +
-    message
-  );
+  var form = this;
+  var status = document.getElementById('formStatus');
+  var button = form.querySelector('button[type="submit"]');
+  var formData = new FormData(form);
 
-  window.location.href = 'mailto:lumbeazdaycare@gmail.com?subject=' + subject + '&body=' + body;
-  this.reset();
+  status.textContent = 'Sending your message...';
+  button.disabled = true;
+
+  fetch(form.action, {
+    method: form.method,
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(function(response) {
+    if (response.ok) {
+      status.textContent = 'Thank you! Your message has been sent.';
+      form.reset();
+    } else {
+      status.textContent = 'Sorry, something went wrong. Please email us directly at lumbeazdaycare@gmail.com.';
+    }
+  }).catch(function() {
+    status.textContent = 'Sorry, something went wrong. Please email us directly at lumbeazdaycare@gmail.com.';
+  }).finally(function() {
+    button.disabled = false;
+  });
 });

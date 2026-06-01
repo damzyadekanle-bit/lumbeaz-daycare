@@ -62,11 +62,13 @@
   <section id="contact" class="section">
     <h2>Contact Us</h2>
 
-    <form id="contactForm">
+    <form id="contactForm" action="https://formspree.io/f/mzdwleyq" method="POST">
       <input type="text" name="name" placeholder="Name" required />
       <input type="email" name="email" placeholder="Email" required />
       <textarea name="message" placeholder="Message" required></textarea>
+      <input type="hidden" name="_subject" value="New Lumbeaz Daycare tour request" />
       <button type="submit">Send Message</button>
+      <p id="formStatus" class="form-status" aria-live="polite"></p>
     </form>
 
     <div class="info">
