@@ -1,4 +1,8 @@
 document.getElementById('contactForm').addEventListener('submit', function(e) {
+  if (this.getAttribute('action')) {
+    return;
+  }
+
   e.preventDefault();
 
   var formData = new FormData(this);
