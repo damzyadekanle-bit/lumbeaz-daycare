@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
+  <title id="title">Playful daycare neighborhood illustration</title>
+  <desc id="desc">A cheerful daycare building with trees, balloons, books, blocks, a wagon, and a sunny sky.</desc>
+  <rect width="1200" height="260" fill="none"/>
+  <circle cx="120" cy="52" r="28" fill="#ffd166"/>
+  <path d="M732 53c14-28 56-28 70 0 27 2 43 32 26 54H709c-19-24-4-55 23-54z" fill="#dff6ff"/>
+  <path d="M58 80c10-21 40-21 50 0 19 2 31 24 19 40H40c-14-18-3-39 18-40z" fill="#d8f3dc"/>
+  <path d="M988 78c11-24 46-24 57 0 23 1 38 27 24 47h-101c-16-21-3-46 20-47z" fill="#dff6ff"/>
+
+  <path d="M0 224h1200v36H0z" fill="#2f2a38"/>
+  <path d="M0 224h1200" stroke="#e83e8c" stroke-width="8"/>
+  <path d="M0 238h1200" stroke="#ffd166" stroke-width="10" stroke-dasharray="90 34 54 28"/>
+
+  <rect x="452" y="92" width="190" height="132" rx="10" fill="#ffffff" stroke="#b82d6d" stroke-width="8"/>
+  <path d="M432 102l115-76 115 76z" fill="#e83e8c"/>
+  <rect x="493" y="138" width="46" height="86" rx="8" fill="#dff6ff" stroke="#2f2a38" stroke-width="6"/>
+  <rect x="563" y="128" width="46" height="52" rx="8" fill="#d8f3dc" stroke="#2f2a38" stroke-width="6"/>
+  <path d="M563 154h46M586 128v52" stroke="#2f2a38" stroke-width="5"/>
+  <path d="M507 181h18" stroke="#2f2a38" stroke-width="5" stroke-linecap="round"/>
+  <path d="M480 90v-36h28v18h32v18" fill="none" stroke="#2f2a38" stroke-width="8" stroke-linejoin="round"/>
+  <text x="548" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff">Lumbeaz</text>
+
+  <path d="M196 224v-56" stroke="#6cbf84" stroke-width="10" stroke-linecap="round"/>
+  <path d="M154 174h84l-42-92z" fill="#6cbf84"/>
+  <path d="M174 132h44l-22-48z" fill="#8bd39b"/>
+  <path d="M1010 224v-72" stroke="#6cbf84" stroke-width="12" stroke-linecap="round"/>
+  <path d="M960 170h100l-50-112z" fill="#6cbf84"/>
+  <path d="M982 118h56l-28-62z" fill="#8bd39b"/>
+  <path d="M846 224v-48" stroke="#6cbf84" stroke-width="10" stroke-linecap="round"/>
+  <path d="M810 180h72l-36-78z" fill="#8bd39b"/>
+
+  <rect x="257" y="178" width="62" height="46" rx="8" fill="#ffd166"/>
+  <rect x="319" y="154" width="62" height="70" rx="8" fill="#4ecdc4"/>
+  <rect x="381" y="190" width="62" height="34" rx="8" fill="#ff6f61"/>
+  <path d="M278 198h22M342 184h16M402 207h20" stroke="#2f2a38" stroke-width="6" stroke-linecap="round"/>
+
+  <circle cx="718" cy="188" r="24" fill="#e83e8c"/>
+  <circle cx="775" cy="188" r="24" fill="#4ecdc4"/>
+  <path d="M706 224h84" stroke="#2f2a38" stroke-width="8" stroke-linecap="round"/>
+  <path d="M742 188h9l22-42" stroke="#2f2a38" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="780" cy="137" r="20" fill="#ffd166"/>
+  <path d="M773 130q8 9 17 0" fill="none" stroke="#2f2a38" stroke-width="4" stroke-linecap="round"/>
+
+  <path d="M895 224h84" stroke="#2f2a38" stroke-width="8" stroke-linecap="round"/>
+  <rect x="910" y="156" width="54" height="68" rx="10" fill="#ffffff" stroke="#2f2a38" stroke-width="6"/>
+  <circle cx="927" cy="180" r="6" fill="#e83e8c"/>
+  <circle cx="947" cy="180" r="6" fill="#4ecdc4"/>
+  <path d="M922 202h30" stroke="#ffd166" stroke-width="8" stroke-linecap="round"/>
+
+  <path d="M102 224h78" stroke="#2f2a38" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="120" cy="190" r="22" fill="#4ecdc4"/>
+  <circle cx="162" cy="190" r="22" fill="#e83e8c"/>
+  <path d="M121 190h42l23-34" stroke="#2f2a38" stroke-width="6" stroke-linecap="round"/>
+  <path d="M188 145l24-20 24 20-24 20z" fill="#ffd166" stroke="#2f2a38" stroke-width="5"/>
+  <path d="M212 165v33" stroke="#2f2a38" stroke-width="5" stroke-linecap="round"/>
+
+  <path d="M1065 92c18-35 72-35 90 0 34 3 54 41 33 70h-153c-24-31-6-68 30-70z" fill="#ffefd6"/>
+  <circle cx="1082" cy="136" r="13" fill="#e83e8c"/>
+  <circle cx="1112" cy="118" r="13" fill="#4ecdc4"/>
+  <circle cx="1140" cy="138" r="13" fill="#ffd166"/>
+  <path d="M1082 149v75M1112 131v93M1140 151v73" stroke="#2f2a38" stroke-width="4"/>
+
+  <path d="M675 82c20-28 64-28 84 0" fill="none" stroke="#2f2a38" stroke-width="6" stroke-linecap="round"/>
+  <path d="M690 82c10 12 18 12 28 0s18-12 28 0" fill="none" stroke="#2f2a38" stroke-width="5" stroke-linecap="round"/>
+</svg>
