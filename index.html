@@ -35,20 +35,20 @@
   <section id="programs" class="section">
     <h2>Our Programs</h2>
     <div class="grid">
-      <div class="card">👶 Infant Care</div>
-      <div class="card">🧒 Toddler Care</div>
-      <div class="card">🎨 Preschool</div>
-      <div class="card">📚 After-School Care</div>
+      <div class="card">Infant Care</div>
+      <div class="card">Toddler Care</div>
+      <div class="card">Preschool</div>
+      <div class="card">After-School Care</div>
     </div>
   </section>
 
   <section id="gallery" class="section">
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="https://source.unsplash.com/600x400/?kids,play" />
-      <img src="https://source.unsplash.com/600x400/?daycare,children" />
-      <img src="https://source.unsplash.com/600x400/?preschool,learning" />
-      <img src="https://source.unsplash.com/600x400/?kids,education" />
+      <img src="https://images.unsplash.com/photo-1578349035260-9f3d4042f1f7?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Children playing together at daycare" />
+      <img src="https://images.unsplash.com/photo-1587323655395-b1c77a12c89a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Children enjoying daycare activities" />
+      <img src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Preschool children learning in a classroom" />
+      <img src="https://images.unsplash.com/photo-1501686637-b7aa9c48a882?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Young children participating in educational activities" />
     </div>
   </section>
 
@@ -62,21 +62,23 @@
   <section id="contact" class="section">
     <h2>Contact Us</h2>
 
-    <form id="contactForm">
-      <input type="text" placeholder="Name" required />
-      <input type="email" placeholder="Email" required />
-      <textarea placeholder="Message" required></textarea>
+    <form id="contactForm" action="https://formspree.io/f/mzdwleyq" method="POST">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" placeholder="Message" required></textarea>
+      <input type="hidden" name="_subject" value="New Lumbeaz Daycare tour request" />
       <button type="submit">Send Message</button>
+      <p id="formStatus" class="form-status" aria-live="polite"></p>
     </form>
 
     <div class="info">
-      <p>📍 921 Vine Maple Street SE, Lacey, WA 98503</p>
-      <p>⏰ 6 AM – 6 PM Daily</p>
-      <p>✉️ lumbeazdaycare@gmail.com</p>
-      <p>📘 Facebook: Lumbeaz Daycare</p>
+      <p>Address: 921 Vine Maple Street SE, Lacey, WA 98503</p>
+      <p>Hours: 6 AM – 6 PM Daily</p>
+      <p>Email: lumbeazdaycare@gmail.com</p>
+      <p>Facebook: Lumbeaz Daycare</p>
     </div>
 
-    <iframe class="map" src="https://www.google.com/maps/embed"></iframe>
+    <iframe class="map" title="Map to Lumbeaz Daycare" src="https://www.google.com/maps?q=921%20Vine%20Maple%20Street%20SE%2C%20Lacey%2C%20WA%2098503&output=embed" loading="lazy"></iframe>
   </section>
 
   <footer>
