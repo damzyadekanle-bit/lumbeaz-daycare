@@ -84,6 +84,8 @@ body {
     linear-gradient(135deg, #fff1f7 0%, #fff9df 50%, #e7f9ff 100%);
 }
 
+}
+
 .hero::after {
   content: "";
   position: absolute;
@@ -326,7 +328,24 @@ button:disabled {
 }
 
 footer {
+  overflow: hidden;
   text-align: center;
+  padding: 0 7% 28px;
+  background: linear-gradient(180deg, #fff8ed 0%, #fff8ed 66%, var(--ink) 66%, var(--ink) 100%);
+  color: white;
+}
+
+.footer-illustration {
+  display: block;
+  width: min(100%, 1200px);
+  margin: 0 auto -8px;
+}
+
+footer p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding-top: 18px;
   padding: 28px;
   background: var(--ink);
   color: white;
