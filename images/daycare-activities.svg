@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="title desc">
+  <title id="title">Children enjoying daycare activities</title>
+  <desc id="desc">Children gather around an activity table with art supplies, books, and toys.</desc>
+  <rect width="600" height="400" fill="#e9f8ff"/>
+  <rect y="260" width="600" height="140" fill="#ffe6a7"/>
+  <rect x="70" y="70" width="460" height="170" rx="28" fill="#fff" stroke="#bde0fe" stroke-width="6"/>
+  <rect x="130" y="205" width="340" height="92" rx="20" fill="#ffafcc"/>
+  <rect x="155" y="220" width="68" height="45" rx="8" fill="#ffffff"/>
+  <rect x="262" y="218" width="78" height="52" rx="8" fill="#cdb4db"/>
+  <circle cx="400" cy="244" r="26" fill="#8ac926"/>
+  <path d="M168 235h42M168 249h30" stroke="#ff595e" stroke-width="6" stroke-linecap="round"/>
+  <path d="M278 231l46 25M324 231l-46 25" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="155" cy="172" r="25" fill="#f1b98a"/>
+  <circle cx="300" cy="164" r="27" fill="#c98255"/>
+  <circle cx="445" cy="172" r="25" fill="#f1b98a"/>
+  <path d="M122 250c6-45 60-45 66 0" fill="#1982c4"/>
+  <path d="M266 250c7-48 61-48 68 0" fill="#ff595e"/>
+  <path d="M412 250c6-45 60-45 66 0" fill="#6a4c93"/>
+  <path d="M136 153c14-18 36-18 50 0" stroke="#7a4a2b" stroke-width="10" stroke-linecap="round"/>
+  <path d="M276 145c18-20 42-20 58 0" stroke="#4c321f" stroke-width="10" stroke-linecap="round"/>
+  <path d="M426 153c14-18 36-18 50 0" stroke="#7a4a2b" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="146" cy="171" r="3"/><circle cx="164" cy="171" r="3"/>
+  <circle cx="290" cy="163" r="3"/><circle cx="310" cy="163" r="3"/>
+  <circle cx="436" cy="171" r="3"/><circle cx="454" cy="171" r="3"/>
+  <path d="M146 184q9 8 18 0M290 177q10 8 20 0M436 184q9 8 18 0" fill="none" stroke="#7b2a3a" stroke-width="4" stroke-linecap="round"/>
+</svg>
