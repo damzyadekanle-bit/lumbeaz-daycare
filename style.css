@@ -35,8 +35,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 16px 7%;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  padding: 1rem 5%;
   background: rgba(255, 255, 255, 0.95);
   color: var(--ink);
   box-shadow: 0 8px 24px rgba(90, 48, 86, 0.08);
@@ -45,20 +45,22 @@ body {
 .navbar h1 {
   margin: 0;
   color: var(--primary-dark);
-  font-size: 1.45rem;
+  flex-shrink: 0;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .navbar nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 8px;
+  gap: clamp(0.35rem, 1vw, 0.75rem);
 }
 
 .navbar a {
   color: var(--muted);
-  padding: 8px 12px;
+  padding: 0.5rem 0.75rem;
   border-radius: 999px;
   font-weight: 700;
   text-decoration: none;
@@ -74,13 +76,17 @@ body {
 .menu-toggle {
   display: none;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 0.7rem;
+  flex-shrink: 0;
   background: transparent;
   color: var(--primary-dark);
   box-shadow: none;
-  padding: 8px;
+  padding: 0.65rem 0;
   text-transform: uppercase;
   letter-spacing: 0.12em;
+  white-space: nowrap;
+  line-height: 1;
 }
 
 .menu-toggle:hover,
@@ -89,33 +95,15 @@ body {
   box-shadow: none;
 }
 
-.menu-lines,
-.menu-lines::before,
-.menu-lines::after {
-  display: block;
-  width: 34px;
-  height: 4px;
-  border-radius: 999px;
-  background: var(--primary-dark);
-}
-
 .menu-lines {
-  position: relative;
-}
-
-.menu-lines::before,
-.menu-lines::after {
-  content: "";
-  position: absolute;
-  left: 0;
-}
-
-.menu-lines::before {
-  top: -10px;
-}
-
-.menu-lines::after {
-  top: 10px;
+  display: block;
+  width: clamp(1.8rem, 8vw, 2.2rem);
+  height: 1.4rem;
+  border-radius: 0;
+  background:
+    linear-gradient(var(--primary-dark), var(--primary-dark)) top / 100% 0.22rem no-repeat,
+    linear-gradient(var(--primary-dark), var(--primary-dark)) center / 100% 0.22rem no-repeat,
+    linear-gradient(var(--primary-dark), var(--primary-dark)) bottom / 100% 0.22rem no-repeat;
 }
 
 .hero {
@@ -187,7 +175,7 @@ button:focus {
   background: transparent;
   color: var(--primary-dark);
   box-shadow: none;
-  padding: 8px 0 8px 12px;
+  padding: 0.65rem 0;
 }
 
 .navbar .menu-toggle:hover,
@@ -260,6 +248,32 @@ button:focus {
   background: var(--primary);
   color: white;
   font-size: 0.9rem;
+}
+
+.schedule-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.tour-cta {
+  max-width: 980px;
+}
+
+#programs .card:nth-child(1) { background: #fff1f7; }
+#programs .card:nth-child(2) { background: #f0fbff; }
+#programs .card:nth-child(3) { background: #fff8df; }
+#programs .card:nth-child(4) { background: #eefaf0; }
+
+#programs .card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+#programs .card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .schedule-grid {
@@ -561,11 +575,11 @@ footer p {
   .navbar {
     align-items: center;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 0.875rem;
   }
 
   .navbar h1 {
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
   }
 
   .menu-toggle {
@@ -577,8 +591,8 @@ footer p {
     display: none;
     width: 100%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px 20px;
-    padding: 20px 0 10px;
+    gap: 1.1rem 1.25rem;
+    padding: 1.25rem 0 0.75rem;
     border-top: 1px solid #f0dbe6;
   }
 
@@ -587,8 +601,8 @@ footer p {
   }
 
   .navbar a {
-    padding: 8px 0;
-    font-size: 1.25rem;
+    padding: 0.5rem 0;
+    font-size: clamp(1.05rem, 5vw, 1.35rem);
   }
 
   .hero {
