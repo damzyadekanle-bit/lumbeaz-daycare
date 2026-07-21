@@ -181,6 +181,21 @@ button:focus {
   box-shadow: 0 16px 28px rgba(232, 62, 140, 0.3);
 }
 
+.navbar .menu-toggle {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--primary-dark);
+  box-shadow: none;
+  padding: 8px 0 8px 12px;
+}
+
+.navbar .menu-toggle:hover,
+.navbar .menu-toggle:focus {
+  transform: none;
+  box-shadow: none;
+}
+
 .hero,
 .section {
   scroll-margin-top: 92px;
@@ -214,6 +229,63 @@ button:focus {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 22px;
   margin-top: 30px;
+}
+
+.card {
+  background: var(--card);
+  padding: 26px;
+  border: 1px solid rgba(232, 62, 140, 0.12);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.feature-card,
+.schedule-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 96px;
+}
+
+.feature-icon {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-size: 0.9rem;
+}
+
+.schedule-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.tour-cta {
+  max-width: 980px;
+}
+
+#programs .card:nth-child(1) { background: #fff1f7; }
+#programs .card:nth-child(2) { background: #f0fbff; }
+#programs .card:nth-child(3) { background: #fff8df; }
+#programs .card:nth-child(4) { background: #eefaf0; }
+
+#programs .card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+#programs .card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .card {
@@ -507,6 +579,7 @@ footer p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px 20px;
     padding: 20px 0 10px;
+    border-top: 1px solid #f0dbe6;
   }
 
   .navbar.nav-open nav {
@@ -519,8 +592,17 @@ footer p {
   }
 
   .hero {
-    min-height: 430px;
-    padding: 70px 6%;
+    min-height: auto;
+    padding: 56px 6% 72px;
+  }
+
+  .hero h2 {
+    font-size: 2.35rem;
+  }
+
+  .hero p {
+    font-size: 1.08rem;
+    margin-bottom: 24px;
   }
 
   .section {
