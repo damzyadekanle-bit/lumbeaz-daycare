@@ -43,14 +43,14 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     }
   }).then(function(response) {
     if (response.ok) {
-      status.textContent = 'Thank you! Your message has been sent.';
+      status.textContent = "Thank you! Your tour request has been received. We'll contact you soon to confirm your visit.";
       form.reset();
       updateChildFields();
     } else {
-      status.textContent = 'Sorry, something went wrong. Please email us directly at lumbeazdaycare@gmail.com.';
+      status.textContent = 'Something went wrong. Please try again later.';
     }
   }).catch(function() {
-    status.textContent = 'Sorry, something went wrong. Please email us directly at lumbeazdaycare@gmail.com.';
+    status.textContent = 'Something went wrong. Please try again later.';
   }).finally(function() {
     button.disabled = false;
   });
