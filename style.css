@@ -17,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 92px;
 }
 
 body {
@@ -68,6 +69,53 @@ body {
 .navbar a:focus {
   color: var(--primary-dark);
   background: #ffe4ec;
+}
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--primary-dark);
+  box-shadow: none;
+  padding: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  transform: none;
+  box-shadow: none;
+}
+
+.menu-lines,
+.menu-lines::before,
+.menu-lines::after {
+  display: block;
+  width: 34px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--primary-dark);
+}
+
+.menu-lines {
+  position: relative;
+}
+
+.menu-lines::before,
+.menu-lines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-lines::before {
+  top: -10px;
+}
+
+.menu-lines::after {
+  top: 10px;
 }
 
 .hero {
@@ -131,6 +179,11 @@ button:hover,
 button:focus {
   transform: translateY(-2px);
   box-shadow: 0 16px 28px rgba(232, 62, 140, 0.3);
+}
+
+.hero,
+.section {
+  scroll-margin-top: 92px;
 }
 
 .section {
@@ -210,14 +263,6 @@ button:focus {
 #programs .card h3 {
   margin: 0 0 10px;
   font-size: 1.2rem;
-}
-
-#programs .card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-  font-weight: 400;
-  line-height: 1.5;
 }
 
 #programs .card p {
@@ -432,14 +477,45 @@ footer p {
 }
 
 @media (max-width: 760px) {
+  html {
+    scroll-padding-top: 112px;
+  }
+
+  .hero,
+  .section {
+    scroll-margin-top: 112px;
+  }
+
   .navbar {
-    position: static;
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .navbar h1 {
+    font-size: 2rem;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
   }
 
   .navbar nav {
-    justify-content: flex-start;
+    display: none;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 20px;
+    padding: 20px 0 10px;
+  }
+
+  .navbar.nav-open nav {
+    display: grid;
+  }
+
+  .navbar a {
+    padding: 8px 0;
+    font-size: 1.25rem;
   }
 
   .hero {
