@@ -31,13 +31,13 @@ body {
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: clamp(0.75rem, 2vw, 1.5rem);
   padding: 1rem 5%;
-  background: rgba(255, 255, 255, 0.95);
+  background: #ffffff;
   color: var(--ink);
   box-shadow: 0 8px 24px rgba(90, 48, 86, 0.08);
 }
@@ -274,38 +274,6 @@ button:focus {
   font-size: 0.95rem;
   font-weight: 400;
   line-height: 1.5;
-}
-
-.tour-cta {
-  max-width: 980px;
-}
-
-#programs .card:nth-child(1) { background: #fff1f7; }
-#programs .card:nth-child(2) { background: #f0fbff; }
-#programs .card:nth-child(3) { background: #fff8df; }
-#programs .card:nth-child(4) { background: #eefaf0; }
-
-#programs .card h3 {
-  margin: 0 0 10px;
-  font-size: 1.2rem;
-}
-
-#programs .card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-#programs .card:nth-child(1) { background: #fff1f7; }
-#programs .card:nth-child(2) { background: #f0fbff; }
-#programs .card:nth-child(3) { background: #fff8df; }
-#programs .card:nth-child(4) { background: #eefaf0; }
-
-#programs .card h3 {
-  margin: 0 0 10px;
-  font-size: 1.2rem;
 }
 
 #programs .card p {
@@ -550,6 +518,16 @@ footer p {
   .navbar a {
     padding: 0.5rem 0;
     font-size: clamp(1.05rem, 5vw, 1.35rem);
+  }
+
+
+  .feature-card {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .feature-icon {
+    flex: 0 0 2.15rem;
   }
 
   .hero {
