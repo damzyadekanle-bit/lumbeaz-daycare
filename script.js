@@ -1,6 +1,15 @@
 var navbar = document.querySelector('.navbar');
 var menuToggle = document.querySelector('.menu-toggle');
-var navLinks = document.querySelectorAll('.navbar a, .hero .btn');
+var navLinks = document.querySelectorAll('.navbar a, .hero .btn, .sticky-tour');
+var contactForm = document.getElementById('contactForm');
+var formStatus = document.getElementById('formStatus');
+var galleryItems = document.querySelectorAll('.gallery-item img');
+var lightbox = document.getElementById('galleryLightbox');
+var year = document.getElementById('year');
+
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
 
 if (menuToggle) {
   menuToggle.addEventListener('click', function() {
@@ -33,60 +42,75 @@ navLinks.forEach(function(link) {
   });
 });
 
-var childCount = document.getElementById('childCount');
-var childFields = document.getElementById('childFields');
+if (lightbox) {
+  var lightboxImage = lightbox.querySelector('img');
+  var lightboxClose = lightbox.querySelector('.lightbox-close');
 
-function updateChildFields() {
-  var count = parseInt(childCount.value, 10) || 1;
-  count = Math.max(1, Math.min(count, 6));
-  childCount.value = count;
-  childFields.innerHTML = '';
+  galleryItems.forEach(function(image) {
+    image.parentElement.addEventListener('click', function() {
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      lightboxClose.focus();
+    });
+  });
 
-  for (var i = 1; i <= count; i++) {
-    var entry = document.createElement('div');
-    entry.className = 'form-row child-entry';
-    entry.innerHTML =
-      '<label class="form-field">Child ' + i + ' Full Name' +
-      '<input type="text" name="child_' + i + '_name" />' +
-      '</label>' +
-      '<label class="form-field">Child ' + i + ' Age' +
-      '<input type="text" name="child_' + i + '_age" />' +
-      '</label>';
-    childFields.appendChild(entry);
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+      closeLightbox();
+    }
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImage.src = '';
+    lightboxImage.alt = '';
   }
 }
 
-childCount.addEventListener('input', updateChildFields);
-updateChildFields();
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+    var form = this;
+    var button = form.querySelector('button[type="submit"]');
+    var formData = new FormData(form);
 
-  var form = this;
-  var status = document.getElementById('formStatus');
-  var button = form.querySelector('button[type="submit"]');
-  var formData = new FormData(form);
-
-  status.textContent = 'Sending your message...';
-  button.disabled = true;
-
-  fetch(form.action, {
-    method: form.method,
-    body: formData,
-    headers: {
-      'Accept': 'application/json'
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      formStatus.textContent = 'Please complete all required fields before submitting.';
+      return;
     }
-  }).then(function(response) {
-    if (response.ok) {
-      status.textContent = "Thank you! Your tour request has been received. We'll contact you soon to confirm your visit.";
-      form.reset();
-      updateChildFields();
-    } else {
-      status.textContent = 'Something went wrong. Please try again later.';
-    }
-  }).catch(function() {
-    status.textContent = 'Something went wrong. Please try again later.';
-  }).finally(function() {
-    button.disabled = false;
+
+    formStatus.textContent = 'Sending your tour request...';
+    button.disabled = true;
+
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(function(response) {
+      if (response.ok) {
+        formStatus.textContent = "Thank you! Your tour request has been received. We'll contact you soon to confirm your visit.";
+        form.reset();
+      } else {
+        formStatus.textContent = 'Something went wrong. Please try again later.';
+      }
+    }).catch(function() {
+      formStatus.textContent = 'Something went wrong. Please try again later.';
+    }).finally(function() {
+      button.disabled = false;
+    });
   });
-});
+}
