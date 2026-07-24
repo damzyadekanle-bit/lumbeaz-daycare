@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="title desc">
+  <title id="title">Young children participating in educational activities</title>
+  <desc id="desc">Young children work on puzzles, books, and counting games in a bright learning space.</desc>
+  <rect width="600" height="400" fill="#f1f8ff"/>
+  <rect y="250" width="600" height="150" fill="#d8f3dc"/>
+  <rect x="92" y="92" width="416" height="92" rx="16" fill="#ffffff" stroke="#bde0fe" stroke-width="6"/>
+  <text x="133" y="152" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#ff595e">Learn</text>
+  <text x="310" y="152" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#1982c4">Play</text>
+  <rect x="110" y="230" width="150" height="92" rx="18" fill="#ffffff"/>
+  <rect x="130" y="250" width="42" height="42" rx="8" fill="#ffca3a"/>
+  <rect x="180" y="250" width="42" height="42" rx="8" fill="#8ac926"/>
+  <rect x="340" y="230" width="150" height="92" rx="18" fill="#ffffff"/>
+  <path d="M365 276h100" stroke="#ff8ec3" stroke-width="12" stroke-linecap="round"/>
+  <path d="M365 298h72" stroke="#6a4c93" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="142" cy="203" r="25" fill="#f1b98a"/>
+  <circle cx="297" cy="213" r="25" fill="#c98255"/>
+  <circle cx="458" cy="203" r="25" fill="#f1b98a"/>
+  <path d="M110 270c6-45 58-45 64 0" fill="#ff595e"/>
+  <path d="M264 282c6-45 60-45 66 0" fill="#ffca3a"/>
+  <path d="M426 270c6-45 58-45 64 0" fill="#1982c4"/>
+  <path d="M122 185c13-18 35-18 48 0" stroke="#7a4a2b" stroke-width="10" stroke-linecap="round"/>
+  <path d="M278 195c13-18 35-18 48 0" stroke="#4c321f" stroke-width="10" stroke-linecap="round"/>
+  <path d="M438 185c13-18 35-18 48 0" stroke="#7a4a2b" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="134" cy="204" r="3"/><circle cx="152" cy="204" r="3"/>
+  <circle cx="289" cy="214" r="3"/><circle cx="307" cy="214" r="3"/>
+  <circle cx="450" cy="204" r="3"/><circle cx="468" cy="204" r="3"/>
+  <path d="M134 218q9 8 18 0M289 228q9 8 18 0M450 218q9 8 18 0" fill="none" stroke="#7b2a3a" stroke-width="4" stroke-linecap="round"/>
+</svg>
