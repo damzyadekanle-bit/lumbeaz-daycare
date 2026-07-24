@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lumbeaz Daycare</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -10,77 +10,253 @@
 
   <header class="navbar">
     <h1>Lumbeaz Daycare</h1>
-    <nav>
-      <a href="#home">Home</a>
+    <button class="menu-toggle" type="button" aria-controls="mainNav" aria-expanded="false">
+      <span class="menu-lines" aria-hidden="true"></span>
+      <span>Menu</span>
+    </button>
+    <nav id="mainNav">
       <a href="#about">About</a>
       <a href="#programs">Programs</a>
+      <a href="#schedule">Daily Schedule</a>
       <a href="#gallery">Gallery</a>
-      <a href="#testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
+      <a href="#book-tour" class="nav-cta">Schedule a Tour</a>
     </nav>
   </header>
 
   <section id="home" class="hero">
-    <h2>Safe, Loving & Fun Childcare</h2>
-    <p>Where children grow, learn, and shine every day.</p>
-    <a href="#contact" class="btn">Schedule a Tour</a>
+    <h2>Safe, nurturing daycare in Lacey, Washington</h2>
+    <p>Lumbeaz Daycare welcomes infants, toddlers, preschoolers, Pre-K children, school-age learners, and summer program families into a warm place to learn, play, and grow.</p>
+    <div class="hero-actions">
+      <a href="#book-tour" class="btn">Schedule a Tour</a>
+      <a href="#programs" class="btn btn-secondary">Explore Our Programs</a>
+    </div>
   </section>
 
-  <section id="about" class="section">
-    <h2>About Us</h2>
-    <p>Lumbeaz Day Care provides a safe, nurturing, educational, and fun environment that supports child development and gives parents peace of mind.</p>
-    <p><strong>Established:</strong> August 1, 2025</p>
+  <section id="why-choose" class="section">
+    <h2>Why Parents Choose Lumbeaz Daycare</h2>
+    <div class="grid features-grid">
+      <div class="card feature-card"><span class="feature-icon">1</span>Safe &amp; Secure Environment</div>
+      <div class="card feature-card"><span class="feature-icon">2</span>Qualified &amp; Caring Staff</div>
+      <div class="card feature-card"><span class="feature-icon">3</span>Age-Appropriate Learning</div>
+      <div class="card feature-card"><span class="feature-icon">4</span>Healthy Meals &amp; Snacks</div>
+      <div class="card feature-card"><span class="feature-icon">5</span>Small Class Sizes</div>
+      <div class="card feature-card"><span class="feature-icon">6</span>Daily Learning &amp; Play</div>
+      <div class="card feature-card"><span class="feature-icon">7</span>Open Communication with Parents</div>
+    </div>
+  </section>
+
+  <section id="safety" class="section">
+    <h2>Safety &amp; Parent Peace of Mind</h2>
+    <p>Families are welcome to verify our license through the Washington State DCYF licensing database.</p>
+    <div class="grid safety-grid">
+      <div class="card"><h3>Licensed Child Care Provider</h3><p>Lumbeaz Daycare is licensed by the Washington State Department of Children, Youth &amp; Families (DCYF).</p><p><strong>License Number:</strong> [Your License Number]</p><p><strong>License Type:</strong> Family Child Care Home</p><p><strong>License Status:</strong> Active</p></div>
+      <div class="card"><h3>Caregiver Training</h3><p>Our caregivers are committed to providing a safe and nurturing environment for every child. Our team receives training in areas such as:</p><ul><li>CPR</li><li>First Aid</li><li>Safe Sleep Practices</li><li>Child Development</li><li>Positive Behavior Guidance</li><li>Emergency Preparedness</li></ul></div>
+      <div class="card"><h3>Security Procedures</h3><p>Your child's safety is our highest priority. Security measures include:</p><ul><li>Authorized parent/guardian pick-up only</li><li>Identification verification when necessary</li><li>Visitor sign-in procedures</li><li>Secure entry during operating hours</li><li>Emergency evacuation plans</li><li>Emergency contact verification</li><li>Daily attendance tracking</li></ul></div>
+      <div class="card"><h3>Health &amp; Safety Policies</h3><p>We follow clear health and safety procedures to help protect every child. Our policies include:</p><ul><li>Daily cleaning and sanitizing of classrooms and toys</li><li>Regular handwashing throughout the day</li><li>Illness exclusion guidelines to reduce the spread of sickness</li><li>Allergy awareness and food safety procedures</li><li>Medication administration only with written parent authorization</li><li>Immediate parent notification of illnesses or injuries</li><li>Emergency preparedness and evacuation procedures</li></ul></div>
+    </div>
   </section>
 
   <section id="programs" class="section">
     <h2>Our Programs</h2>
-    <div class="grid">
-      <div class="card">👶 Infant Care</div>
-      <div class="card">🧒 Toddler Care</div>
-      <div class="card">🎨 Preschool</div>
-      <div class="card">📚 After-School Care</div>
+    <div class="grid programs-grid">
+      <div class="card"><h3>Infant Care</h3><p>Calm, attentive care for babies with feeding, diapering, sleep routines, sensory activities, and early milestones.</p></div>
+      <div class="card"><h3>Toddler Care</h3><p>Guided play, language growth, movement, social skills, and supportive routines for growing independence.</p></div>
+      <div class="card"><h3>Preschool</h3><p>Hands-on learning, creativity, early literacy, problem-solving, and social development for curious learners.</p></div>
+      <div class="card"><h3>Pre-K</h3><p>Kindergarten readiness through structured activities, confidence building, cooperation, and exploration.</p></div>
+      <div class="card"><h3>Before &amp; After School Care</h3><p>A safe place for school-age children with homework support, recreation, creative activities, and connection.</p></div>
+      <div class="card"><h3>Summer Program</h3><p>Seasonal learning and play with engaging activities that keep children active, creative, and connected.</p></div>
+    </div>
+  </section>
+
+  <section id="about" class="section about-section">
+    <div class="about-hero-block">
+      <div class="about-hero-copy">
+        <h2>About Lumbeaz Daycare</h2>
+        <p>Lumbeaz Daycare is a warm, family-focused childcare environment in Lacey, Washington, created to give children a safe and nurturing place to learn, play, and grow. We provide attentive care, age-appropriate learning experiences, and meaningful daily activities that support each child’s social, emotional, physical, and cognitive development.</p>
+        <p>We believe every child is unique and deserves to feel secure, valued, and encouraged. Through learning, creativity, exploration, and positive relationships, we help children build confidence and develop a strong foundation for the future.</p>
+      </div>
+      <div class="about-hero-image">
+        <img src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Children learning and playing together in a warm daycare classroom">
+      </div>
+    </div>
+
+    <div class="about-story-grid" aria-label="Lumbeaz Daycare mission and vision">
+      <div class="about-story-image">
+        <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Caregiver helping young children with hands-on learning activities">
+      </div>
+      <article class="about-story-card">
+        <svg class="about-line-icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path d="M18 31c-5-5-5-13 0-17 4-4 11-3 14 2 3-5 10-6 14-2 5 4 5 12 0 17L32 45 18 31Z"></path>
+          <path d="M14 47h12l8 5 16-8"></path>
+          <path d="M6 44h8v12H6z"></path>
+        </svg>
+        <h3>Our Mission</h3>
+        <p>Our mission is to provide a safe, nurturing, and engaging childcare environment where every child feels loved, supported, and inspired to learn. We are committed to helping children grow through purposeful play, age-appropriate learning, creativity, exploration, and positive relationships with caring adults.</p>
+      </article>
+
+      <article class="about-story-card">
+        <svg class="about-line-icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path d="M12 14h16c4 0 7 3 7 7v29c0-4-3-7-7-7H12V14Z"></path>
+          <path d="M52 14H36c-4 0-7 3-7 7v29c0-4 3-7 7-7h16V14Z"></path>
+          <path d="M32 10l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6Z"></path>
+        </svg>
+        <h3>Our Vision</h3>
+        <p>Our vision is to become a trusted childcare partner for families in our community by creating a welcoming environment where children develop confidence, curiosity, kindness, independence, and a lifelong love of learning.</p>
+      </article>
+      <div class="about-story-image">
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Smiling child enjoying a bright and welcoming childcare environment">
+      </div>
+    </div>
+  </section>
+
+  <section id="enrollment" class="section">
+    <h2>Simple Enrollment Steps</h2>
+    <div class="grid steps-grid">
+      <div class="card"><span class="feature-icon">1</span><h3>Schedule a Tour</h3><p>Visit the daycare, ask questions, and see the environment.</p></div>
+      <div class="card"><span class="feature-icon">2</span><h3>Share Your Needs</h3><p>Tell us your child’s age, program interest, and preferred schedule.</p></div>
+      <div class="card"><span class="feature-icon">3</span><h3>Complete Enrollment</h3><p>[Add enrollment packet, deposit, and start-date details here.]</p></div>
+    </div>
+  </section>
+
+  <section id="schedule" class="section">
+    <h2>Daily Schedule</h2>
+    <p>Sample schedule only. Daily routines vary by age group, enrollment schedule, and child needs.</p>
+    <div class="timeline">
+      <div class="timeline-item"><span>Arrival &amp; Welcome</span></div>
+      <div class="timeline-item"><span>Breakfast/Snacks</span></div>
+      <div class="timeline-item"><span>Learning Activities</span></div>
+      <div class="timeline-item"><span>Creative Play</span></div>
+      <div class="timeline-item"><span>Outdoor Activities</span></div>
+      <div class="timeline-item"><span>Lunch</span></div>
+      <div class="timeline-item"><span>Rest Time</span></div>
+      <div class="timeline-item"><span>Afternoon Activities</span></div>
+      <div class="timeline-item"><span>Pick-Up</span></div>
     </div>
   </section>
 
   <section id="gallery" class="section">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="https://source.unsplash.com/600x400/?kids,play" />
-      <img src="https://source.unsplash.com/600x400/?daycare,children" />
-      <img src="https://source.unsplash.com/600x400/?preschool,learning" />
-      <img src="https://source.unsplash.com/600x400/?kids,education" />
+    <h2>Photo Gallery</h2>
+    <p>Temporary photos are shown until Lumbeaz Daycare local photos are provided.</p>
+    <div class="gallery-carousel" aria-label="Daycare photo carousel">
+      <div class="gallery">
+        <button type="button" class="gallery-item"><img src="https://images.unsplash.com/photo-1578349035260-9f3d4042f1f7?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Children playing together in a childcare setting" /></button>
+        <button type="button" class="gallery-item"><img src="https://images.unsplash.com/photo-1587323655395-b1c77a12c89a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Children participating in daycare activities" /></button>
+        <button type="button" class="gallery-item"><img src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Preschool children learning in a classroom" /></button>
+        <button type="button" class="gallery-item"><img src="https://images.unsplash.com/photo-1501686637-b7aa9c48a882?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Young child participating in an educational activity" /></button>
+        <button type="button" class="gallery-item"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Smiling child in a playful learning environment" /></button>
+        <button type="button" class="gallery-item"><img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Child exploring toys and classroom materials" /></button>
+        <button type="button" class="gallery-item"><img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Children building and learning through play" /></button>
+        <button type="button" class="gallery-item"><img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Children enjoying a group learning activity" /></button>
+        <button type="button" class="gallery-item" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1578349035260-9f3d4042f1f7?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Children playing together in a childcare setting" /></button>
+        <button type="button" class="gallery-item" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1587323655395-b1c77a12c89a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Children participating in daycare activities" /></button>
+        <button type="button" class="gallery-item" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Preschool children learning in a classroom" /></button>
+        <button type="button" class="gallery-item" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1501686637-b7aa9c48a882?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Young child participating in an educational activity" /></button>
+        <button type="button" class="gallery-item" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Smiling child in a playful learning environment" /></button>
+        <button type="button" class="gallery-item" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Child exploring toys and classroom materials" /></button>
+        <button type="button" class="gallery-item" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Children building and learning through play" /></button>
+        <button type="button" class="gallery-item" aria-hidden="true" tabindex="-1"><img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200" alt="Children enjoying a group learning activity" /></button>
+      </div>
     </div>
   </section>
 
   <section id="testimonials" class="section">
-    <h2>Testimonials</h2>
-    <div class="card">"Amazing care and loving staff!"</div>
-    <div class="card">"My child loves going every day!"</div>
-    <div class="card">"Very clean, safe, and professional."</div>
+    <h2>Parent Testimonials</h2>
+    <div class="grid testimonials-grid">
+      <div class="card"><p>“Lumbeaz Daycare has been a warm and welcoming place for our child to learn, play, and build confidence.”</p><strong>Parent of an Infant Care child</strong></div>
+      <div class="card"><p>“We appreciate the caring environment, helpful communication, and the daily routines that support our child's growth.”</p><strong>Parent of a Preschool child</strong></div>
+      <div class="card"><p>“Our family values the safe setting, engaging activities, and positive attention given to each child.”</p><strong>Parent of a School-Age child</strong></div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details><summary>What ages do you serve?</summary><p>Lumbeaz Daycare proudly provides quality childcare and early learning programs for children from birth through 13 years of age. Our programs include Infant Care (0–12 months), Toddler Care (1–2 years), Preschool (3–4 years), Pre-K (4–5 years), Before &amp; After School Care (5–13 years), and Summer Program (5–13 years).</p><p>We provide age-appropriate care and learning experiences tailored to each child's developmental stage, helping them build confidence, curiosity, and a lifelong love of learning.</p></details>
+      <details><summary>How do I schedule a tour?</summary><p>Scheduling a tour is easy. Simply complete our Schedule a Tour form by providing your contact information, your child's age, your preferred program, and a convenient date and time.</p><p>Once we receive your request, a member of our team will contact you to confirm your visit and answer any questions you may have.</p></details>
+      <details><summary>Do schedules vary by age?</summary><p>Yes. Each age group follows a daily routine that is developmentally appropriate.</p><p>Infants have flexible schedules based on their individual feeding, sleeping, and care needs, while toddlers, preschoolers, and older children follow structured daily routines that include learning activities, outdoor play, meals, rest time, creative exploration, and social interaction.</p><p>Our goal is to provide a balanced day that supports each child's growth, learning, and well-being.</p></details>
+      <details><summary>Where can I find your policies?</summary><p>Our daycare follows comprehensive health, safety, and operational policies to ensure a secure and supportive environment for every child.</p><p>These include health and illness guidelines, medication administration procedures, allergy and dietary accommodations, safety and emergency procedures, authorized pick-up policies, and cleaning and sanitation practices.</p><p>Families receive complete policy information during enrollment, and we're happy to answer any questions during your scheduled tour.</p></details>
+      <details><summary>What are your operating hours?</summary><p>We are open daily from 6:00 AM to 6:00 PM to accommodate the needs of busy families. Please contact us if you have questions about specific scheduling or program availability.</p></details>
+      <details><summary>Do you provide meals and snacks?</summary><p>We provide nutritious meals and snacks that support healthy growth and development. We also work closely with families to accommodate food allergies, dietary restrictions, and other nutritional needs.</p></details>
+      <details><summary>How do you keep children safe?</summary><p>The safety of every child is our highest priority. We maintain a secure, clean, and closely supervised environment with age-appropriate safety procedures, emergency preparedness plans, and open communication with families to ensure children are cared for throughout the day.</p></details>
+      <details><summary>How do you communicate with parents?</summary><p>We believe strong partnerships with families are essential. Parents receive regular updates about their child's day, including activities, meals, naps where applicable, and any important information, and we encourage open communication at all times.</p></details>
+    </div>
+  </section>
+
+  <section id="book-tour" class="section tour-cta">
+    <h2>Schedule a Tour</h2>
+    <p>Schedule a tour today and experience the Lumbeaz Daycare difference.</p>
+
+    <form id="contactForm" action="https://formspree.io/f/xkodorzb" method="POST">
+      <label class="form-field">Parent/Guardian Name*
+        <input type="text" name="parent_name" autocomplete="name" required />
+      </label>
+      <label class="form-field">Email*
+        <input type="email" name="email" autocomplete="email" required />
+      </label>
+      <label class="form-field">Phone*
+        <input type="tel" name="phone" autocomplete="tel" required />
+      </label>
+      <label class="form-field">Child’s Age*
+        <input type="text" name="child_age" required />
+      </label>
+      <label class="form-field">Program*
+        <select name="program_interest" required>
+          <option value="">Choose a program</option>
+          <option value="Infant Care">Infant Care</option>
+          <option value="Toddler Care">Toddler Care</option>
+          <option value="Preschool">Preschool</option>
+          <option value="Pre-K">Pre-K</option>
+          <option value="Before & After School Care">Before &amp; After School Care</option>
+          <option value="Summer Program">Summer Program</option>
+        </select>
+      </label>
+      <label class="form-field">Preferred Date*
+        <input type="date" name="preferred_tour_date" required />
+      </label>
+      <label class="form-field">Preferred Time*
+        <input type="time" name="preferred_tour_time" required />
+      </label>
+      <label class="form-field full">Notes
+        <textarea name="notes" placeholder="Tell us anything helpful before your tour."></textarea>
+      </label>
+      <label class="checkbox-field full">
+        <input type="checkbox" name="contact_consent" value="yes" required />
+        I consent to being contacted regarding my tour request.*
+      </label>
+      <input type="hidden" name="_subject" value="New Lumbeaz Daycare tour request" />
+      <button type="submit">Schedule My Tour</button>
+      <p id="formStatus" class="form-status" aria-live="polite"></p>
+    </form>
   </section>
 
   <section id="contact" class="section">
-    <h2>Contact Us</h2>
-
-    <form id="contactForm">
-      <input type="text" placeholder="Name" required />
-      <input type="email" placeholder="Email" required />
-      <textarea placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-
+    <h2>Contact Lumbeaz Daycare</h2>
     <div class="info">
-      <p>📍 921 Vine Maple Street SE, Lacey, WA 98503</p>
-      <p>⏰ 6 AM – 6 PM Daily</p>
-      <p>✉️ lumbeazdaycare@gmail.com</p>
-      <p>📘 Facebook: Lumbeaz Daycare</p>
+      <p><strong>Phone:</strong> <a href="tel:+12533126412">+1 (253) 312-6412</a></p>
+      <p><strong>Email:</strong> <a href="mailto:lumbeazdaycare@gmail.com">lumbeazdaycare@gmail.com</a></p>
+      <p><strong>Address:</strong> <a href="https://www.google.com/maps?q=921%20Vine%20Maple%20Street%20SE%2C%20Lacey%2C%20WA%2098503" target="_blank" rel="noopener">921 Vine Maple Street SE, Lacey, WA 98503</a></p>
+      <p><strong>Hours:</strong> 6 AM – 6 PM Daily</p>
     </div>
-
-    <iframe class="map" src="https://www.google.com/maps/embed"></iframe>
+    <a class="btn call-button" href="tel:+12533126412">Call Lumbeaz Daycare</a>
+    <iframe class="map" title="Map to Lumbeaz Daycare" src="https://www.google.com/maps?q=921%20Vine%20Maple%20Street%20SE%2C%20Lacey%2C%20WA%2098503&amp;output=embed" loading="lazy"></iframe>
   </section>
 
+  <section id="privacy" class="section privacy-section">
+    <h2>Privacy Policy</h2>
+    <p>[Add the full privacy policy here. Include how tour request information is collected, used, stored, and protected.]</p>
+  </section>
+
+  <a class="sticky-tour" href="#book-tour">Schedule a Tour</a>
+
+  <div class="lightbox" id="galleryLightbox" aria-hidden="true">
+    <button type="button" class="lightbox-close" aria-label="Close gallery image">×</button>
+    <img src="" alt="" />
+  </div>
+
   <footer>
-    <p>© 2025 Lumbeaz Daycare</p>
+    <img class="footer-illustration" src="images/footer-illustration.svg" alt="" aria-hidden="true" />
+    <p>© <span id="year"></span> Lumbeaz Daycare · <a href="#privacy">Privacy Policy</a></p>
   </footer>
 
   <script src="script.js"></script>
