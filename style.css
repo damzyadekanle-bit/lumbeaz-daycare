@@ -189,6 +189,7 @@ button:focus {
   scroll-margin-top: 92px;
 }
 
+.hero,
 .section {
   max-width: 1120px;
   margin: 0 auto;
@@ -274,41 +275,6 @@ button:focus {
   font-size: 0.95rem;
   font-weight: 400;
   line-height: 1.5;
-}
-
-.card {
-  background: var(--card);
-  padding: 26px;
-  border: 1px solid rgba(232, 62, 140, 0.12);
-  border-radius: 24px;
-  box-shadow: var(--shadow);
-  font-size: 1.1rem;
-  font-weight: 800;
-}
-
-.feature-card,
-.schedule-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  min-height: 96px;
-}
-
-.feature-icon {
-  display: inline-grid;
-  place-items: center;
-  flex: 0 0 34px;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--primary);
-  color: white;
-  font-size: 0.9rem;
-}
-
-.schedule-grid {
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 .tour-cta {
@@ -1059,4 +1025,35 @@ footer a {
   .about-story-card {
     border-radius: 24px;
   }
+}
+
+.safety-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(232, 62, 140, 0.16);
+  text-align: left;
+}
+
+.safety-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 8px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.safety-card:nth-child(1) { background: #fff1f7; }
+.safety-card:nth-child(2) { background: #f0fbff; }
+.safety-card:nth-child(3) { background: #fff8df; }
+.safety-card:nth-child(4) { background: #eefaf0; }
+
+.safety-card h3 {
+  color: var(--primary-dark);
+}
+
+.license-note {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(184, 45, 109, 0.18);
+  font-weight: 700;
 }
