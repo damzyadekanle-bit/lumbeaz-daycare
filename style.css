@@ -189,6 +189,7 @@ button:focus {
   scroll-margin-top: 92px;
 }
 
+.hero,
 .section {
   max-width: 1120px;
   margin: 0 auto;
@@ -266,14 +267,6 @@ button:focus {
 #programs .card h3 {
   margin: 0 0 10px;
   font-size: 1.2rem;
-}
-
-#programs .card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-  font-weight: 400;
-  line-height: 1.5;
 }
 
 #programs .card p {
@@ -766,6 +759,40 @@ footer a {
   margin: 0 0 1.75rem;
   color: var(--muted);
   font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.privacy-content h3 {
+  margin: 2.25rem 0 0.75rem;
+  color: var(--primary-dark);
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+}
+
+.privacy-content ul {
+  margin: -0.75rem 0 1.75rem;
+  padding-left: 1.5rem;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.privacy-content li + li {
+  margin-top: 0.4rem;
+}
+
+.privacy-content address {
+  margin: -0.75rem 0 1.75rem;
+  color: var(--muted);
+  font-style: normal;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.privacy-content address a {
+  color: var(--primary-dark);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.privacy-content .policy-date {
+  color: var(--ink);
 }
 
 .privacy-content .btn {
