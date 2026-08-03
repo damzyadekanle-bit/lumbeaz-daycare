@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="title desc">
+  <title id="title">Preschool children learning in a classroom</title>
+  <desc id="desc">A teacher points to letters on a classroom board while preschool children learn together.</desc>
+  <rect width="600" height="400" fill="#fff7e6"/>
+  <rect x="62" y="54" width="476" height="176" rx="18" fill="#2f7d5b" stroke="#8b5e34" stroke-width="12"/>
+  <text x="150" y="150" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">A B C</text>
+  <text x="346" y="150" font-family="Arial, sans-serif" font-size="54" font-weight="700" fill="#ffd166">1 2 3</text>
+  <circle cx="126" cy="278" r="27" fill="#f1b98a"/>
+  <circle cx="238" cy="278" r="27" fill="#c98255"/>
+  <circle cx="354" cy="278" r="27" fill="#f1b98a"/>
+  <path d="M93 360c6-52 60-52 66 0" fill="#ff8ec3"/>
+  <path d="M205 360c6-52 66-52 72 0" fill="#1982c4"/>
+  <path d="M321 360c6-52 66-52 72 0" fill="#8ac926"/>
+  <path d="M102 260c16-20 38-20 52 0" stroke="#7a4a2b" stroke-width="10" stroke-linecap="round"/>
+  <path d="M216 260c16-20 38-20 52 0" stroke="#4c321f" stroke-width="10" stroke-linecap="round"/>
+  <path d="M332 260c16-20 38-20 52 0" stroke="#7a4a2b" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="458" cy="252" r="30" fill="#c98255"/>
+  <path d="M414 360c7-70 82-70 90 0" fill="#6a4c93"/>
+  <path d="M431 233c18-23 48-23 64 0" stroke="#3b2a1a" stroke-width="12" stroke-linecap="round"/>
+  <path d="M424 244l-84-45" stroke="#6a4c93" stroke-width="12" stroke-linecap="round"/>
+  <path d="M476 244l50-30" stroke="#6a4c93" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="449" cy="252" r="3"/><circle cx="470" cy="252" r="3"/>
+  <path d="M449 268q11 9 22 0" fill="none" stroke="#7b2a3a" stroke-width="4" stroke-linecap="round"/>
+</svg>
