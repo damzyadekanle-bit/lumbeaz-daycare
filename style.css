@@ -1,4 +1,5 @@
 :root {
+  --header-height: 92px;
   --primary: #e83e8c;
   --primary-dark: #b82d6d;
   --accent: #ffd166;
@@ -17,7 +18,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 92px;
+  scroll-padding-top: calc(var(--header-height) + 16px);
 }
 
 body {
@@ -186,10 +187,9 @@ button:focus {
 
 .hero,
 .section {
-  scroll-margin-top: 92px;
+  scroll-margin-top: calc(var(--header-height) + 16px);
 }
 
-.hero,
 .section {
   max-width: 1120px;
   margin: 0 auto;
@@ -218,6 +218,63 @@ button:focus {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 22px;
   margin-top: 30px;
+}
+
+.card {
+  background: var(--card);
+  padding: 26px;
+  border: 1px solid rgba(232, 62, 140, 0.12);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.feature-card,
+.schedule-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 96px;
+}
+
+.feature-icon {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-size: 0.9rem;
+}
+
+.schedule-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.tour-cta {
+  max-width: 980px;
+}
+
+#programs .card:nth-child(1) { background: #fff1f7; }
+#programs .card:nth-child(2) { background: #f0fbff; }
+#programs .card:nth-child(3) { background: #fff8df; }
+#programs .card:nth-child(4) { background: #eefaf0; }
+
+#programs .card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+#programs .card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .card {
@@ -402,6 +459,20 @@ textarea {
   font-weight: 700;
 }
 
+.field-error {
+  min-height: 1.25em;
+  color: #9c1c51;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.form-note {
+  grid-column: 1 / -1;
+  margin: -0.25rem 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 button:disabled {
   cursor: not-allowed;
   opacity: 0.7;
@@ -453,15 +524,6 @@ footer p {
 }
 
 @media (max-width: 760px) {
-  html {
-    scroll-padding-top: 112px;
-  }
-
-  .hero,
-  .section {
-    scroll-margin-top: 112px;
-  }
-
   .navbar {
     align-items: center;
     flex-wrap: wrap;
@@ -640,6 +702,10 @@ footer p {
 
 .lightbox.open {
   display: grid;
+}
+
+body.lightbox-open {
+  overflow: hidden;
 }
 
 .lightbox img {
