@@ -277,6 +277,68 @@ button:focus {
   line-height: 1.5;
 }
 
+.card {
+  background: var(--card);
+  padding: 26px;
+  border: 1px solid rgba(232, 62, 140, 0.12);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.feature-card,
+.schedule-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 96px;
+}
+
+.feature-icon {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-size: 0.9rem;
+}
+
+.schedule-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.tour-cta {
+  max-width: 980px;
+}
+
+#programs .card:nth-child(1) { background: #fff1f7; }
+#programs .card:nth-child(2) { background: #f0fbff; }
+#programs .card:nth-child(3) { background: #fff8df; }
+#programs .card:nth-child(4) { background: #eefaf0; }
+
+#programs .card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+#programs .card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#programs .card:nth-child(1) { background: #fff1f7; }
+#programs .card:nth-child(2) { background: #f0fbff; }
+#programs .card:nth-child(3) { background: #fff8df; }
+#programs .card:nth-child(4) { background: #eefaf0; }
+
 .gallery img {
   width: 100%;
   aspect-ratio: 3 / 2;
