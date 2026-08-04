@@ -651,10 +651,17 @@ footer p {
   transform: translateY(-2px);
 }
 
-.gallery-item img {
+.gallery-item img,
+.gallery-item iframe {
   display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   border: 8px solid white;
   box-shadow: none;
+}
+
+.gallery-item iframe {
+  pointer-events: none;
 }
 
 .lightbox {
