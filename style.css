@@ -263,8 +263,6 @@ button:focus {
 #programs .card:nth-child(2) { background: #f0fbff; }
 #programs .card:nth-child(3) { background: #fff8df; }
 #programs .card:nth-child(4) { background: #eefaf0; }
-#programs .card:nth-child(5) { background: #fff3e0; }
-#programs .card:nth-child(6) { background: #f4efff; }
 
 #programs .card h3 {
   margin: 0 0 10px;
@@ -278,6 +276,19 @@ button:focus {
   font-weight: 400;
   line-height: 1.5;
 }
+
+#programs .card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#programs .card:nth-child(1) { background: #fff1f7; }
+#programs .card:nth-child(2) { background: #f0fbff; }
+#programs .card:nth-child(3) { background: #fff8df; }
+#programs .card:nth-child(4) { background: #eefaf0; }
 
 .gallery img {
   width: 100%;
