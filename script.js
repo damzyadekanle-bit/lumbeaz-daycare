@@ -160,8 +160,8 @@ function validateTourTime() {
     return true;
   }
 
-  var isUnavailable = tourTime.value < '06:00' || tourTime.value > '18:00';
-  var message = isUnavailable ? 'Please choose a time between 6:00 AM and 6:00 PM.' : '';
+  var isUnavailable = tourTime.value < '06:00' || tourTime.value > '17:30';
+  var message = isUnavailable ? 'Please choose a time between 6:00 AM and 5:30 PM.' : '';
   tourTime.setCustomValidity(message);
   tourTimeError.textContent = message;
   return !isUnavailable;
