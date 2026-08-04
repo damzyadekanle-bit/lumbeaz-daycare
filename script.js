@@ -7,7 +7,7 @@ var tourDate = document.getElementById('preferredTourDate');
 var tourTime = document.getElementById('preferredTourTime');
 var tourDateError = document.getElementById('tourDateError');
 var tourTimeError = document.getElementById('tourTimeError');
-var galleryItems = document.querySelectorAll('.gallery-item img');
+var galleryItems = document.querySelectorAll('.gallery-item');
 var lightbox = document.getElementById('galleryLightbox');
 var year = document.getElementById('year');
 
@@ -69,14 +69,36 @@ navLinks.forEach(function(link) {
 
 if (lightbox) {
   var lightboxImage = lightbox.querySelector('img');
+  var lightboxFrame = lightbox.querySelector('iframe');
   var lightboxClose = lightbox.querySelector('.lightbox-close');
   var lightboxTrigger = null;
 
-  galleryItems.forEach(function(image) {
-    image.parentElement.addEventListener('click', function() {
-      lightboxTrigger = image.parentElement;
-      lightboxImage.src = image.src;
-      lightboxImage.alt = image.alt;
+  galleryItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var image = item.querySelector('img');
+      var frame = item.querySelector('iframe');
+      var gallerySrc = item.getAttribute('data-gallery-src');
+      var galleryTitle = item.getAttribute('data-gallery-title') || 'Daycare photo';
+
+      lightboxTrigger = item;
+
+      if (gallerySrc && lightboxFrame) {
+        lightboxImage.hidden = true;
+        lightboxFrame.hidden = false;
+        lightboxFrame.src = gallerySrc;
+        lightboxFrame.title = galleryTitle;
+      } else if (image) {
+        lightboxFrame.hidden = true;
+        lightboxImage.hidden = false;
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+      } else if (frame && lightboxFrame) {
+        lightboxImage.hidden = true;
+        lightboxFrame.hidden = false;
+        lightboxFrame.src = frame.src;
+        lightboxFrame.title = frame.title;
+      }
+
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden', 'false');
       lightboxClose.removeAttribute('tabindex');
@@ -112,6 +134,13 @@ if (lightbox) {
     document.body.classList.remove('lightbox-open');
     lightboxImage.src = '';
     lightboxImage.alt = '';
+    lightboxImage.hidden = false;
+
+    if (lightboxFrame) {
+      lightboxFrame.src = '';
+      lightboxFrame.title = '';
+      lightboxFrame.hidden = true;
+    }
 
     if (lightboxTrigger) {
       lightboxTrigger.focus();
