@@ -1072,7 +1072,7 @@ footer a {
 }
 
 .gallery-carousel .gallery-item {
-  flex: 0 0 clamp(260px, 34vw, 420px);
+  flex: 0 0 clamp(320px, 52vw, 640px);
 }
 
 @keyframes gallery-scroll {
@@ -1087,7 +1087,7 @@ footer a {
 
 @media (max-width: 760px) {
   .gallery-carousel .gallery-item {
-    flex-basis: min(78vw, 340px);
+    flex-basis: min(92vw, 560px);
   }
 }
 
