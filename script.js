@@ -1,6 +1,6 @@
 var navbar = document.querySelector('.navbar');
 var menuToggle = document.querySelector('.menu-toggle');
-var navLinks = document.querySelectorAll('.navbar a, .hero .btn, .sticky-tour');
+var navLinks = document.querySelectorAll('.navbar a, .hero .btn, .program-cta, .sticky-tour');
 var contactForm = document.getElementById('contactForm');
 var formStatus = document.getElementById('formStatus');
 var tourDate = document.getElementById('preferredTourDate');
