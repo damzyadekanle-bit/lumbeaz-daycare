@@ -1,13 +1,14 @@
 var navbar = document.querySelector('.navbar');
 var menuToggle = document.querySelector('.menu-toggle');
-var navLinks = document.querySelectorAll('.navbar a, .hero .btn, .sticky-tour');
+var navLinks = document.querySelectorAll('.navbar a, .hero .btn, .program-cta, .sticky-tour');
 var contactForm = document.getElementById('contactForm');
 var formStatus = document.getElementById('formStatus');
 var tourDate = document.getElementById('preferredTourDate');
 var tourTime = document.getElementById('preferredTourTime');
+var programInterest = document.querySelector('select[name="program_interest"]');
 var tourDateError = document.getElementById('tourDateError');
 var tourTimeError = document.getElementById('tourTimeError');
-var galleryItems = document.querySelectorAll('.gallery-item img');
+var galleryItems = document.querySelectorAll('.gallery-item');
 var lightbox = document.getElementById('galleryLightbox');
 var year = document.getElementById('year');
 
@@ -54,6 +55,11 @@ navLinks.forEach(function(link) {
       return;
     }
 
+    var program = link.getAttribute('data-program');
+    if (program && programInterest) {
+      programInterest.value = program;
+    }
+
     e.preventDefault();
     if (navbar.classList.contains('nav-open')) {
       navbar.classList.remove('nav-open');
@@ -69,14 +75,36 @@ navLinks.forEach(function(link) {
 
 if (lightbox) {
   var lightboxImage = lightbox.querySelector('img');
+  var lightboxFrame = lightbox.querySelector('iframe');
   var lightboxClose = lightbox.querySelector('.lightbox-close');
   var lightboxTrigger = null;
 
-  galleryItems.forEach(function(image) {
-    image.parentElement.addEventListener('click', function() {
-      lightboxTrigger = image.parentElement;
-      lightboxImage.src = image.src;
-      lightboxImage.alt = image.alt;
+  galleryItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var image = item.querySelector('img');
+      var frame = item.querySelector('iframe');
+      var gallerySrc = item.getAttribute('data-gallery-src');
+      var galleryTitle = item.getAttribute('data-gallery-title') || 'Daycare photo';
+
+      lightboxTrigger = item;
+
+      if (gallerySrc && lightboxFrame) {
+        lightboxImage.hidden = true;
+        lightboxFrame.hidden = false;
+        lightboxFrame.src = gallerySrc;
+        lightboxFrame.title = galleryTitle;
+      } else if (image) {
+        lightboxFrame.hidden = true;
+        lightboxImage.hidden = false;
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+      } else if (frame && lightboxFrame) {
+        lightboxImage.hidden = true;
+        lightboxFrame.hidden = false;
+        lightboxFrame.src = frame.src;
+        lightboxFrame.title = frame.title;
+      }
+
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden', 'false');
       lightboxClose.removeAttribute('tabindex');
@@ -112,6 +140,13 @@ if (lightbox) {
     document.body.classList.remove('lightbox-open');
     lightboxImage.src = '';
     lightboxImage.alt = '';
+    lightboxImage.hidden = false;
+
+    if (lightboxFrame) {
+      lightboxFrame.src = '';
+      lightboxFrame.title = '';
+      lightboxFrame.hidden = true;
+    }
 
     if (lightboxTrigger) {
       lightboxTrigger.focus();
@@ -160,8 +195,8 @@ function validateTourTime() {
     return true;
   }
 
-  var isUnavailable = tourTime.value < '06:00' || tourTime.value > '18:00';
-  var message = isUnavailable ? 'Please choose a time between 6:00 AM and 6:00 PM.' : '';
+  var isUnavailable = tourTime.value < '06:00' || tourTime.value > '17:30';
+  var message = isUnavailable ? 'Please choose a time between 6:00 AM and 5:30 PM.' : '';
   tourTime.setCustomValidity(message);
   tourTimeError.textContent = message;
   return !isUnavailable;
