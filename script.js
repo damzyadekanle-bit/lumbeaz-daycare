@@ -80,38 +80,47 @@ if (lightbox) {
   var lightboxTrigger = null;
 
   galleryItems.forEach(function(item) {
-    item.addEventListener('click', function() {
-      var image = item.querySelector('img');
-      var frame = item.querySelector('iframe');
-      var gallerySrc = item.getAttribute('data-gallery-src');
-      var galleryTitle = item.getAttribute('data-gallery-title') || 'Daycare photo';
-
-      lightboxTrigger = item;
-
-      if (gallerySrc && lightboxFrame) {
-        lightboxImage.hidden = true;
-        lightboxFrame.hidden = false;
-        lightboxFrame.src = gallerySrc;
-        lightboxFrame.title = galleryTitle;
-      } else if (image) {
-        lightboxFrame.hidden = true;
-        lightboxImage.hidden = false;
-        lightboxImage.src = image.src;
-        lightboxImage.alt = image.alt;
-      } else if (frame && lightboxFrame) {
-        lightboxImage.hidden = true;
-        lightboxFrame.hidden = false;
-        lightboxFrame.src = frame.src;
-        lightboxFrame.title = frame.title;
+    item.addEventListener('click', openGalleryItem);
+    item.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openGalleryItem.call(item);
       }
-
-      lightbox.classList.add('open');
-      lightbox.setAttribute('aria-hidden', 'false');
-      lightboxClose.removeAttribute('tabindex');
-      document.body.classList.add('lightbox-open');
-      lightboxClose.focus();
     });
   });
+
+  function openGalleryItem() {
+    var item = this;
+    var image = item.querySelector('img');
+    var frame = item.querySelector('iframe');
+    var gallerySrc = item.getAttribute('data-gallery-src');
+    var galleryTitle = item.getAttribute('data-gallery-title') || 'Daycare photo';
+
+    lightboxTrigger = item;
+
+    if (gallerySrc && lightboxFrame) {
+      lightboxImage.hidden = true;
+      lightboxFrame.hidden = false;
+      lightboxFrame.src = gallerySrc;
+      lightboxFrame.title = galleryTitle;
+    } else if (image) {
+      lightboxFrame.hidden = true;
+      lightboxImage.hidden = false;
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+    } else if (frame && lightboxFrame) {
+      lightboxImage.hidden = true;
+      lightboxFrame.hidden = false;
+      lightboxFrame.src = frame.src;
+      lightboxFrame.title = frame.title;
+    }
+
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightboxClose.removeAttribute('tabindex');
+    document.body.classList.add('lightbox-open');
+    lightboxClose.focus();
+  }
 
   lightboxClose.addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', function(e) {
@@ -166,6 +175,7 @@ function validateTourDate() {
   if (!tourDate || !tourDate.value) {
     if (tourDate) {
       tourDate.setCustomValidity('');
+      tourDate.removeAttribute('aria-invalid');
     }
     if (tourDateError) {
       tourDateError.textContent = '';
@@ -180,6 +190,11 @@ function validateTourDate() {
   var isUnavailable = selectedDate < today || selectedDate.getDay() === 0;
   var message = isUnavailable ? 'Please choose an available tour date.' : '';
   tourDate.setCustomValidity(message);
+  if (isUnavailable) {
+    tourDate.setAttribute('aria-invalid', 'true');
+  } else {
+    tourDate.removeAttribute('aria-invalid');
+  }
   tourDateError.textContent = message;
   return !isUnavailable;
 }
@@ -188,6 +203,7 @@ function validateTourTime() {
   if (!tourTime || !tourTime.value) {
     if (tourTime) {
       tourTime.setCustomValidity('');
+      tourTime.removeAttribute('aria-invalid');
     }
     if (tourTimeError) {
       tourTimeError.textContent = '';
@@ -198,6 +214,11 @@ function validateTourTime() {
   var isUnavailable = tourTime.value < '06:00' || tourTime.value > '17:30';
   var message = isUnavailable ? 'Please choose a time between 6:00 AM and 5:30 PM.' : '';
   tourTime.setCustomValidity(message);
+  if (isUnavailable) {
+    tourTime.setAttribute('aria-invalid', 'true');
+  } else {
+    tourTime.removeAttribute('aria-invalid');
+  }
   tourTimeError.textContent = message;
   return !isUnavailable;
 }
