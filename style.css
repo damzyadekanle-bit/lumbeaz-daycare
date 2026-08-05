@@ -271,6 +271,17 @@ button:focus {
   font-size: 1.2rem;
 }
 
+.program-age {
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(196, 38, 120, 0.1);
+  color: var(--primary-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
 #programs .card p {
   margin: 0;
   color: var(--muted);
@@ -299,6 +310,30 @@ button:focus {
 .program-cta:focus {
   transform: translateY(-2px);
   box-shadow: 0 16px 28px rgba(232, 62, 140, 0.28);
+}
+
+.tour-expectations {
+  max-width: 1120px;
+}
+
+.tour-expectations-grid .card {
+  text-align: left;
+}
+
+.tour-expectations-grid .feature-icon {
+  margin: 0 0 14px;
+}
+
+.tour-expectations-grid h3 {
+  margin: 0 0 10px;
+}
+
+.tour-expectations-grid p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .gallery img {
@@ -778,8 +813,20 @@ footer a {
   font-weight: 800;
 }
 
-.call-button {
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
   margin: 4px auto 28px;
+}
+
+.contact-actions .btn {
+  margin: 0;
+}
+
+.call-button {
+  margin: 0;
 }
 
 .privacy-page {

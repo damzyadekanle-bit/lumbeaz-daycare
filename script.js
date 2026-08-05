@@ -5,6 +5,7 @@ var contactForm = document.getElementById('contactForm');
 var formStatus = document.getElementById('formStatus');
 var tourDate = document.getElementById('preferredTourDate');
 var tourTime = document.getElementById('preferredTourTime');
+var programInterest = document.querySelector('select[name="program_interest"]');
 var tourDateError = document.getElementById('tourDateError');
 var tourTimeError = document.getElementById('tourTimeError');
 var galleryItems = document.querySelectorAll('.gallery-item');
@@ -52,6 +53,11 @@ navLinks.forEach(function(link) {
 
     if (!target) {
       return;
+    }
+
+    var program = link.getAttribute('data-program');
+    if (program && programInterest) {
+      programInterest.value = program;
     }
 
     e.preventDefault();
