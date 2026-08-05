@@ -807,6 +807,36 @@ body.lightbox-open {
   line-height: 1;
 }
 
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  z-index: 201;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0;
+  border-radius: 50%;
+  background: white;
+  color: var(--primary-dark);
+  box-shadow: none;
+  font-size: 2.5rem;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.lightbox-prev {
+  left: 18px;
+}
+
+.lightbox-next {
+  right: 18px;
+}
+
+.lightbox-nav:hover,
+.lightbox-nav:focus {
+  transform: translateY(-50%);
+  box-shadow: none;
+}
+
 .faq-list {
   display: grid;
   gap: 14px;
@@ -1023,6 +1053,7 @@ footer a {
 .gallery-carousel {
   overflow: hidden;
   margin-top: 30px;
+  touch-action: pan-y;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
@@ -1032,7 +1063,7 @@ footer a {
   width: max-content;
   gap: 26px;
   margin-top: 0;
-  animation: gallery-scroll 55s linear infinite;
+  animation: gallery-scroll 38s linear infinite;
 }
 
 .gallery-carousel:hover .gallery,
