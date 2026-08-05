@@ -630,6 +630,33 @@ footer p {
   font-weight: 800;
 }
 
+.gallery-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.5rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+
+.gallery-link:hover,
+.gallery-link:focus {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
 .gallery-item {
   display: block;
   overflow: hidden;
