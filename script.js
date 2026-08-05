@@ -8,7 +8,7 @@ var tourTime = document.getElementById('preferredTourTime');
 var programInterest = document.querySelector('select[name="program_interest"]');
 var tourDateError = document.getElementById('tourDateError');
 var tourTimeError = document.getElementById('tourTimeError');
-var galleryItems = document.querySelectorAll('.gallery-item');
+var galleryItems = document.querySelectorAll('.gallery-open');
 var lightbox = document.getElementById('galleryLightbox');
 var year = document.getElementById('year');
 
@@ -91,8 +91,9 @@ if (lightbox) {
 
   function openGalleryItem() {
     var item = this;
-    var image = item.querySelector('img');
-    var frame = item.querySelector('iframe');
+    var card = item.closest('.gallery-item');
+    var image = card ? card.querySelector('img') : null;
+    var frame = card ? card.querySelector('iframe') : null;
     var gallerySrc = item.getAttribute('data-gallery-src');
     var galleryTitle = item.getAttribute('data-gallery-title') || 'Daycare photo';
 
@@ -147,13 +148,13 @@ if (lightbox) {
     lightbox.setAttribute('aria-hidden', 'true');
     lightboxClose.setAttribute('tabindex', '-1');
     document.body.classList.remove('lightbox-open');
-    lightboxImage.src = '';
+    lightboxImage.removeAttribute('src');
     lightboxImage.alt = '';
-    lightboxImage.hidden = false;
+    lightboxImage.hidden = true;
 
     if (lightboxFrame) {
-      lightboxFrame.src = '';
-      lightboxFrame.title = '';
+      lightboxFrame.removeAttribute('src');
+      lightboxFrame.title = 'Daycare photo preview';
       lightboxFrame.hidden = true;
     }
 
