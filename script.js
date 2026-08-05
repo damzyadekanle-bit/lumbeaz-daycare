@@ -1,13 +1,16 @@
 var navbar = document.querySelector('.navbar');
 var menuToggle = document.querySelector('.menu-toggle');
-var navLinks = document.querySelectorAll('.navbar a, .hero .btn, .sticky-tour');
+var navLinks = document.querySelectorAll('.navbar a, .hero .btn, .program-cta, .sticky-tour');
 var contactForm = document.getElementById('contactForm');
 var formStatus = document.getElementById('formStatus');
 var tourDate = document.getElementById('preferredTourDate');
 var tourTime = document.getElementById('preferredTourTime');
+var programInterest = document.querySelector('select[name="program_interest"]');
 var tourDateError = document.getElementById('tourDateError');
 var tourTimeError = document.getElementById('tourTimeError');
-var galleryItems = document.querySelectorAll('.gallery-item img');
+var galleryItems = document.querySelectorAll('.gallery-open');
+var galleryCarousel = document.querySelector('.gallery-carousel');
+var galleryTrack = document.querySelector('.gallery-carousel .gallery');
 var lightbox = document.getElementById('galleryLightbox');
 var year = document.getElementById('year');
 
@@ -54,6 +57,11 @@ navLinks.forEach(function(link) {
       return;
     }
 
+    var program = link.getAttribute('data-program');
+    if (program && programInterest) {
+      programInterest.value = program;
+    }
+
     e.preventDefault();
     if (navbar.classList.contains('nav-open')) {
       navbar.classList.remove('nav-open');
@@ -69,21 +77,112 @@ navLinks.forEach(function(link) {
 
 if (lightbox) {
   var lightboxImage = lightbox.querySelector('img');
+  var lightboxFrame = lightbox.querySelector('iframe');
   var lightboxClose = lightbox.querySelector('.lightbox-close');
+  var lightboxPrev = lightbox.querySelector('.lightbox-prev');
+  var lightboxNext = lightbox.querySelector('.lightbox-next');
   var lightboxTrigger = null;
+  var currentGalleryIndex = 0;
+  var touchStartX = null;
+  var carouselTouchStartX = null;
+  var carouselNudgeTimer = null;
 
-  galleryItems.forEach(function(image) {
-    image.parentElement.addEventListener('click', function() {
-      lightboxTrigger = image.parentElement;
-      lightboxImage.src = image.src;
-      lightboxImage.alt = image.alt;
-      lightbox.classList.add('open');
-      lightbox.setAttribute('aria-hidden', 'false');
-      lightboxClose.removeAttribute('tabindex');
-      document.body.classList.add('lightbox-open');
-      lightboxClose.focus();
+  var gallerySlides = [];
+  galleryItems.forEach(function(item) {
+    var gallerySrc = item.getAttribute('data-gallery-src');
+    if (!gallerySrc || gallerySlides.some(function(slide) { return slide.src === gallerySrc; })) {
+      return;
+    }
+
+    gallerySlides.push({
+      src: gallerySrc,
+      title: item.getAttribute('data-gallery-title') || 'Daycare photo',
+      trigger: item
     });
   });
+
+  galleryItems.forEach(function(item) {
+    item.addEventListener('click', openGalleryItem);
+    item.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openGalleryItem.call(item);
+      }
+    });
+  });
+
+  if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', function() {
+      showGallerySlide(currentGalleryIndex - 1);
+    });
+  }
+
+  if (lightboxNext) {
+    lightboxNext.addEventListener('click', function() {
+      showGallerySlide(currentGalleryIndex + 1);
+    });
+  }
+
+  lightbox.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].clientX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', function(e) {
+    if (touchStartX === null) {
+      return;
+    }
+
+    var deltaX = e.changedTouches[0].clientX - touchStartX;
+    touchStartX = null;
+
+    if (Math.abs(deltaX) < 45) {
+      return;
+    }
+
+    if (deltaX < 0) {
+      showGallerySlide(currentGalleryIndex + 1);
+    } else {
+      showGallerySlide(currentGalleryIndex - 1);
+    }
+  }, { passive: true });
+
+  function openGalleryItem() {
+    var item = this;
+    var gallerySrc = item.getAttribute('data-gallery-src');
+    var nextIndex = gallerySlides.findIndex(function(slide) {
+      return slide.src === gallerySrc;
+    });
+
+    lightboxTrigger = item;
+    showGallerySlide(nextIndex === -1 ? 0 : nextIndex);
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightboxClose.removeAttribute('tabindex');
+    if (lightboxPrev) {
+      lightboxPrev.removeAttribute('tabindex');
+    }
+    if (lightboxNext) {
+      lightboxNext.removeAttribute('tabindex');
+    }
+    document.body.classList.add('lightbox-open');
+    lightboxClose.focus();
+  }
+
+  function showGallerySlide(index) {
+    if (!gallerySlides.length) {
+      return;
+    }
+
+    currentGalleryIndex = (index + gallerySlides.length) % gallerySlides.length;
+    var slide = gallerySlides[currentGalleryIndex];
+
+    if (lightboxFrame) {
+      lightboxImage.hidden = true;
+      lightboxFrame.hidden = false;
+      lightboxFrame.src = slide.src;
+      lightboxFrame.title = slide.title;
+    }
+  }
 
   lightboxClose.addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', function(e) {
@@ -99,9 +198,10 @@ if (lightbox) {
 
     if (e.key === 'Escape') {
       closeLightbox();
-    } else if (e.key === 'Tab') {
-      e.preventDefault();
-      lightboxClose.focus();
+    } else if (e.key === 'ArrowLeft') {
+      showGallerySlide(currentGalleryIndex - 1);
+    } else if (e.key === 'ArrowRight') {
+      showGallerySlide(currentGalleryIndex + 1);
     }
   });
 
@@ -109,9 +209,22 @@ if (lightbox) {
     lightbox.classList.remove('open');
     lightbox.setAttribute('aria-hidden', 'true');
     lightboxClose.setAttribute('tabindex', '-1');
+    if (lightboxPrev) {
+      lightboxPrev.setAttribute('tabindex', '-1');
+    }
+    if (lightboxNext) {
+      lightboxNext.setAttribute('tabindex', '-1');
+    }
     document.body.classList.remove('lightbox-open');
-    lightboxImage.src = '';
+    lightboxImage.removeAttribute('src');
     lightboxImage.alt = '';
+    lightboxImage.hidden = true;
+
+    if (lightboxFrame) {
+      lightboxFrame.removeAttribute('src');
+      lightboxFrame.title = 'Daycare photo preview';
+      lightboxFrame.hidden = true;
+    }
 
     if (lightboxTrigger) {
       lightboxTrigger.focus();
@@ -120,6 +233,48 @@ if (lightbox) {
   }
 }
 
+if (galleryCarousel && galleryTrack) {
+  var carouselTouchStartX = null;
+  var carouselNudgeTimer = null;
+
+  galleryCarousel.addEventListener('touchstart', function(e) {
+    carouselTouchStartX = e.changedTouches[0].clientX;
+  }, { passive: true });
+
+  galleryCarousel.addEventListener('touchend', function(e) {
+    if (carouselTouchStartX === null) {
+      return;
+    }
+
+    var deltaX = e.changedTouches[0].clientX - carouselTouchStartX;
+    carouselTouchStartX = null;
+
+    if (Math.abs(deltaX) < 45) {
+      return;
+    }
+
+    nudgeGalleryCarousel(deltaX < 0 ? -1 : 1);
+  }, { passive: true });
+
+  function nudgeGalleryCarousel(direction) {
+    var firstItem = galleryTrack.querySelector('.gallery-item');
+    if (!firstItem) {
+      return;
+    }
+
+    var distance = firstItem.offsetWidth + 26;
+    galleryTrack.style.animationPlayState = 'paused';
+    galleryTrack.style.transition = 'transform 0.35s ease';
+    galleryTrack.style.transform = 'translateX(' + (direction * distance) + 'px)';
+
+    window.clearTimeout(carouselNudgeTimer);
+    carouselNudgeTimer = window.setTimeout(function() {
+      galleryTrack.style.transition = '';
+      galleryTrack.style.transform = '';
+      galleryTrack.style.animationPlayState = '';
+    }, 450);
+  }
+}
 function getLocalDateValue(date) {
   var yearValue = date.getFullYear();
   var monthValue = String(date.getMonth() + 1).padStart(2, '0');
@@ -131,6 +286,7 @@ function validateTourDate() {
   if (!tourDate || !tourDate.value) {
     if (tourDate) {
       tourDate.setCustomValidity('');
+      tourDate.removeAttribute('aria-invalid');
     }
     if (tourDateError) {
       tourDateError.textContent = '';
@@ -145,6 +301,11 @@ function validateTourDate() {
   var isUnavailable = selectedDate < today || selectedDate.getDay() === 0;
   var message = isUnavailable ? 'Please choose an available tour date.' : '';
   tourDate.setCustomValidity(message);
+  if (isUnavailable) {
+    tourDate.setAttribute('aria-invalid', 'true');
+  } else {
+    tourDate.removeAttribute('aria-invalid');
+  }
   tourDateError.textContent = message;
   return !isUnavailable;
 }
@@ -153,6 +314,7 @@ function validateTourTime() {
   if (!tourTime || !tourTime.value) {
     if (tourTime) {
       tourTime.setCustomValidity('');
+      tourTime.removeAttribute('aria-invalid');
     }
     if (tourTimeError) {
       tourTimeError.textContent = '';
@@ -160,9 +322,14 @@ function validateTourTime() {
     return true;
   }
 
-  var isUnavailable = tourTime.value < '06:00' || tourTime.value > '18:00';
-  var message = isUnavailable ? 'Please choose a time between 6:00 AM and 6:00 PM.' : '';
+  var isUnavailable = tourTime.value < '06:00' || tourTime.value > '17:30';
+  var message = isUnavailable ? 'Please choose a time between 6:00 AM and 5:30 PM.' : '';
   tourTime.setCustomValidity(message);
+  if (isUnavailable) {
+    tourTime.setAttribute('aria-invalid', 'true');
+  } else {
+    tourTime.removeAttribute('aria-invalid');
+  }
   tourTimeError.textContent = message;
   return !isUnavailable;
 }
