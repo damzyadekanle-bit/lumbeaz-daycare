@@ -98,6 +98,8 @@ if (lightbox) {
     gallerySlides.push({
       src: gallerySrc,
       title: item.getAttribute('data-gallery-title') || 'Daycare photo',
+      alt: item.getAttribute('data-gallery-alt') || item.getAttribute('data-gallery-title') || 'Daycare photo',
+      isImage: /\.(?:avif|gif|jpe?g|png|svg|webp)(?:[?#].*)?$/i.test(gallerySrc),
       trigger: item
     });
   });
@@ -182,11 +184,19 @@ if (lightbox) {
     currentGalleryIndex = (index + gallerySlides.length) % gallerySlides.length;
     var slide = gallerySlides[currentGalleryIndex];
 
-    if (lightboxFrame) {
+    if (slide.isImage) {
+      lightboxFrame.removeAttribute('src');
+      lightboxFrame.hidden = true;
+      lightboxImage.src = slide.src;
+      lightboxImage.alt = slide.alt;
+      lightboxImage.hidden = false;
+    } else {
+      lightboxImage.removeAttribute('src');
+      lightboxImage.alt = '';
       lightboxImage.hidden = true;
-      lightboxFrame.hidden = false;
       lightboxFrame.src = slide.src;
       lightboxFrame.title = slide.title;
+      lightboxFrame.hidden = false;
     }
   }
 
