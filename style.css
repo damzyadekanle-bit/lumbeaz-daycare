@@ -1299,3 +1299,36 @@ footer a {
   border-top: 1px solid rgba(184, 45, 109, 0.18);
   font-weight: 700;
 }
+
+.gallery-item figcaption {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  padding: 2.5rem 1rem 0.85rem;
+  border-radius: 0 0 22px 22px;
+  background: linear-gradient(transparent, rgba(47, 42, 56, 0.82));
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-align: left;
+  pointer-events: none;
+}
+
+.gallery-item img {
+  object-fit: cover;
+}
+
+.lightbox-caption {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  z-index: 201;
+  margin: 0;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  background: rgba(47, 42, 56, 0.82);
+  color: white;
+  font-weight: 800;
+  transform: translateX(-50%);
+}

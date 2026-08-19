@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title description">
+  <title id="title">Child enjoying a creative activity</title>
+  <desc id="description">A child paints a bright rainbow at an easel in a sunny activity room.</desc>
+  <rect width="1200" height="800" fill="#eefaf1"/>
+  <circle cx="1040" cy="125" r="60" fill="#ffd55c"/>
+  <path d="M0 610q180-90 350 0t350 0 500 0v190H0z" fill="#bce8c7"/>
+  <path d="M680 650 850 165l170 485M735 510h230" fill="none" stroke="#7c5537" stroke-width="24" stroke-linecap="round"/>
+  <rect x="735" y="165" width="230" height="330" rx="18" fill="#fff" stroke="#6fa8dc" stroke-width="16"/>
+  <path d="M780 405a75 75 0 0 1 145 0M795 405a60 60 0 0 1 115 0M810 405a45 45 0 0 1 85 0" fill="none" stroke-linecap="round" stroke-width="20" stroke="#ed6a8d"/>
+  <circle cx="390" cy="280" r="95" fill="#8f5639"/>
+  <path d="M295 270q95-170 190 0v-65q-95-95-190 0z" fill="#34273d"/>
+  <circle cx="355" cy="285" r="9" fill="#29243a"/><circle cx="425" cy="285" r="9" fill="#29243a"/>
+  <path d="M360 330q30 28 60 0" fill="none" stroke="#29243a" stroke-width="9" stroke-linecap="round"/>
+  <path d="M275 620q20-230 115-230t130 230" fill="#6fa8dc"/>
+  <path d="m495 445 245-115" stroke="#8f5639" stroke-width="38" stroke-linecap="round"/>
+  <circle cx="746" cy="328" r="22" fill="#ed6a8d"/>
+</svg>
