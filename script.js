@@ -79,6 +79,7 @@ navLinks.forEach(function(link) {
 if (lightbox) {
   var lightboxImage = lightbox.querySelector('img');
   var lightboxFrame = lightbox.querySelector('iframe');
+  var lightboxCaption = lightbox.querySelector('.lightbox-caption');
   var lightboxClose = lightbox.querySelector('.lightbox-close');
   var lightboxPrev = lightbox.querySelector('.lightbox-prev');
   var lightboxNext = lightbox.querySelector('.lightbox-next');
@@ -184,6 +185,10 @@ if (lightbox) {
     currentGalleryIndex = (index + gallerySlides.length) % gallerySlides.length;
     var slide = gallerySlides[currentGalleryIndex];
 
+    if (lightboxCaption) {
+      lightboxCaption.textContent = slide.title;
+    }
+
     if (slide.isImage) {
       lightboxFrame.removeAttribute('src');
       lightboxFrame.hidden = true;
@@ -235,6 +240,10 @@ if (lightbox) {
     lightboxImage.removeAttribute('src');
     lightboxImage.alt = '';
     lightboxImage.hidden = true;
+
+    if (lightboxCaption) {
+      lightboxCaption.textContent = '';
+    }
 
     if (lightboxFrame) {
       lightboxFrame.removeAttribute('src');
