@@ -1069,6 +1069,7 @@ footer a {
 
 .gallery-carousel .gallery {
   display: flex;
+  align-items: flex-start;
   width: max-content;
   gap: 26px;
   margin-top: 0;
